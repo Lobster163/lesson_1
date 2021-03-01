@@ -1,6 +1,7 @@
 ﻿
 #include <iostream>
 #include <cassert>
+#include <cstdint>
 
 class Power
 {
@@ -14,6 +15,25 @@ class Power
         }
         void calculate() {
             std::cout << pow(a, b) << "\n";
+        }
+};
+
+
+class RGBA
+{
+    private:
+        uint8_t m_red = 0;
+        uint8_t m_green = 0;
+        uint8_t m_blue = 0;
+        uint8_t m_alpha = 255;
+    public:
+        RGBA() {};
+        RGBA(uint8_t red, uint8_t green, uint8_t blue, uint8_t alpha) : m_red(red), m_green(green), m_blue(blue), m_alpha(alpha) {}
+        void print() {
+            std::cout << "red = " << (int)m_red << "\n";
+            std::cout << "green = " << (int)m_green << "\n";
+            std::cout << "blue = " << (int)m_blue << "\n";
+            std::cout << "alpha = " << (int)m_alpha << "\n";
         }
 };
 
@@ -73,6 +93,12 @@ int main()
     power.calculate();
 
     std::cout << "\np2:\n";
+    RGBA rgba;
+    rgba.print();
+    std::cout << "\n";
+    RGBA rgba2(255,128,200,50);
+    rgba2.print();
+
     std::cout << "\np3:\n";
     Stack stack(10);
     stack.reset();
