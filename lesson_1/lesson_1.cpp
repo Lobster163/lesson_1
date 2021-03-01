@@ -59,7 +59,7 @@ class Stack {
             return true;
         }
         int pop(){ 
-            if (position <= 0){
+            if (position < 0){
                 std::cout << "Stack is null\n";
                 return -1;
             }
