@@ -31,8 +31,7 @@ class Stack {
             }
             else{
                 int result = m_data[position];
-                m_data[position] = 0;
-                position--;
+                m_data[position--] = 0;
                 return result;
             }
 
