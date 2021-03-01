@@ -2,6 +2,21 @@
 #include <iostream>
 #include <cassert>
 
+class Power
+{
+    private:
+        float a = 3.14f;
+        float b = 1.14f;
+    public:
+        void setValue(float A, float B) {
+            a = A;
+            b = B;
+        }
+        void calculate() {
+            std::cout << pow(a, b) << "\n";
+        }
+};
+
 class Stack {
     private: 
         int m_size;
@@ -51,6 +66,14 @@ class Stack {
 
 int main()
 {
+    std::cout << "p1:\n";
+    Power power;
+    power.calculate();
+    power.setValue(2, 3);
+    power.calculate();
+
+    std::cout << "\np2:\n";
+    std::cout << "\np3:\n";
     Stack stack(10);
     stack.reset();
     stack.print();
