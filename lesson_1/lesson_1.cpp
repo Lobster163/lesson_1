@@ -18,7 +18,6 @@ class Power
         }
 };
 
-
 class RGBA
 {
     private:
@@ -69,7 +68,6 @@ class Stack {
                 m_data[position--] = 0;
                 return result;
             }
-
         }
         void print() { 
             for (int i = 0; i < m_size; ++i)              
@@ -81,7 +79,6 @@ class Stack {
                 m_data[i] = 0;
             position = -1;
         }
-
 };
 
 int main()
@@ -115,5 +112,4 @@ int main()
     stack.pop();
     stack.pop();
     stack.print();
-
 }
