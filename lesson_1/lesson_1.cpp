@@ -1,4 +1,4 @@
-﻿
+/*WELL DONE!*/
 #include <iostream>
 #include <cassert>
 #include <cstdint>
@@ -13,6 +13,20 @@ class Power
             a = A;
             b = B;
         }
+        /* more common
+        void setValue(float a, float b) {
+            this->a = a;
+            this->b = b;
+        }
+        or
+        private:
+            float _a = 3.14f;
+            float _b = 1.14f;
+        void setValue(float a, float b) {
+            _a = a;
+            _b = b;
+        }
+        */
         void calculate() {
             std::cout << pow(a, b) << "\n";
         }
@@ -50,6 +64,7 @@ class Stack {
         }
         ~Stack() {
             delete[] m_data;
+            // excelent: without undefined behavior :)
         }
 
         bool push(int value){ 
@@ -73,11 +88,16 @@ class Stack {
             for (int i = 0; i < m_size; ++i)              
                 std::cout << m_data[i] << " ";
             std::cout << "\n";
+            
+            //maybe will be a bit better to print up to the position
         }
         void reset() {
             for (int i = 0; i < m_size; ++i)
                 m_data[i] = 0;
             position = -1;
+            
+            //std::memset could be helpful here
+            //https://en.cppreference.com/w/cpp/string/byte/memset 
         }
 };
 
